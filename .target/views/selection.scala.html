@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/selection.css")">
+</head>
+
+<body>
+	<header>
+		@header()
+	</header>
+
+	<div id="mainContent">
+		<div id="clustered">
+			<h2>Recommendations based on Age/Gender:</h2>
+			<a id="userbased" href="/recommendations/cub" class="selection">User-Based Recommendation</a> 
+			<a id="itembased" class="selection" href="/recommendations/cib">Item-Based Recommendation</a>
+		</div>
+
+		<div id="nonclustered">
+			<h2>
+				Recommendations <span>not</span> based on Age/Gender:
+			</h2>
+			<a id="userbased" href="/recommendations/ncub" class="selection">User-Based Recommendation</a> 
+			<a id="itembased" href="/recommendations/ncib" class="selection">Item-Based Recommendation</a>
+		</div>
+	</div>
+
+	<footer> Copyright 2013 | MoviesXclusively4U | All Rights
+	Reserved </footer>
+
+</body>
+</html>
+

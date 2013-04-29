@@ -1,0 +1,60 @@
+@(message: String)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sign in</title>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+</head>
+
+<body>
+	<header>
+	<div id="logo">
+		<a href="/home"><img src="@routes.Assets.at("images/logo2.png")"></a>
+	</div>
+	<h1>
+		Movies<span>X</span>clusively<span>4</span>U
+	</h1>
+	<br id="clearfloat" />
+
+	<script type="text/javascript">
+		function submitForm() {
+			var userId = document.getElementById("username").value;
+			document.location = "/selection/" + userId;
+		}
+	</script> </header>
+
+	<div id="content">
+
+		<div class="message">
+			<br /> @message
+		</div>
+
+		<h2>Sign in to access your current movie recommendations:</h2>
+		<hr />
+		<form action="/recommend" name="myForm">
+			<div>
+				<input type="text" placeholder="First Name" required=""
+					id="username" />
+			</div>
+
+			<div>
+				<input type="password" placeholder="Password" required=""
+					id="password" />
+			</div>
+
+			<div>
+				<input type="button" value="Sign In"
+					onclick="javascript:submitForm();" />
+			</div>
+		</form>
+	</div>
+
+	<footer> Copyright 2013 | MoviesXclusively4U | All Rights
+	Reserved </footer>
+
+</body>
+</html>
+

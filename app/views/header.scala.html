@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" media="screen" href="@routes.Assets.at(" stylesheets/main.css")"/>
+</head>
+
+<body>
+	<div id="logo">
+		<a href="/home"><img src="/assets/images/logo2.png" /></a>
+	</div>
+	<h1>
+		Movies<span>X</span>clusively<span>4</span>U
+	</h1>
+	<nav> <a href="/home">Sign Out</a> </nav>
+	<nav> <a href="javascript:void(0);">User Id: @session.get("userId")</a> </nav>
+	<br id="clearfloat" />
+</body>
+</html>
+
+

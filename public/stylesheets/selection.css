@@ -1,0 +1,99 @@
+header, footer{
+	display: block;
+}
+
+html,body{
+	margin:0;
+	padding:0;
+}
+
+html{
+	background: url("/assets/images/MyMoviesWallpaper2.png") no-repeat fixed 0px -300px;
+    webkit-background-size: cover;
+    moz-background-size: cover;
+    o-background-size: cover;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/images/MyMoviesWallpaper.png',     sizingMethod='scale');
+    -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/images/MyMoviesWallpaper.png', sizingMethod='scale');
+}
+
+header{
+	width: 98%;
+	padding: 5px;
+	margin: auto;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	box-shadow: 5px 5px 5px 5px #333333;
+
+
+	background: rgb(147,24,2);
+	background: -moz-linear-gradient(-45deg,  rgba(147,24,2,1) 1%, rgba(193,19,19,1) 99%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(1%,rgba(147,24,2,1)), 				color-stop(99%,rgba(193,19,19,1)));
+	background: -webkit-linear-gradient(-45deg,  rgba(147,24,2,1) 1%,rgba(193,19,19,1) 99%);
+	background: -o-linear-gradient(-45deg,  rgba(147,24,2,1) 1%,rgba(193,19,19,1) 99%);
+	background: -ms-linear-gradient(-45deg,  rgba(147,24,2,1) 1%,rgba(193,19,19,1) 99%);
+	background: linear-gradient(135deg,  rgba(147,24,2,1) 1%,rgba(193,19,19,1) 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#931802', endColorstr='#c11313',GradientType=1 );
+
+}
+header h1{
+	padding: 0px;
+	padding-left: 10px;
+	color: #CCC;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 5px 5px 5px #000000;
+	letter-spacing: 2px;
+	font-size:30px;
+}
+header h1 span{
+	padding: 0px;
+	font-size:36px;
+}
+
+#mainContent{
+	width: 98%;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+h2 span{
+	font-style: italic;
+}
+
+#clustered{
+	float:left;
+	width: 27%;
+	margin-top: 40px;
+	margin-left: 19%;
+	background: rgba(124,1,1,.3);
+	padding:10px;
+	border:3px black;
+	border-style:outset;
+}
+
+#nonclustered{
+	float:right;
+	width: 27%;
+	margin-top: 40px;
+	margin-right: 19%;
+	background: rgba(129,112,126,.5);
+	padding:10px;
+	border:3px black;
+	border-style:outset;
+}
+
+.selection {
+	display:block;
+	padding: 10px;
+}
+
+footer{
+	position: absolute; 
+	bottom: 15px;
+	width: 28.5%;
+	margin-left: 460px;
+	background: rgba(179,21,13,.1);
+	padding: 4px;
+}

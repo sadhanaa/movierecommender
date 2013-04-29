@@ -1,0 +1,35 @@
+@(items: List[RecommendedItemWrapper])(recommendationTypeDescription: String)(message: String)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>@recommendationTypeDescription</title>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/recommendations.css")">
+</head>
+
+<body>
+	<header>
+		@header()
+	</header>
+
+	<div id="mainContent">
+		@if(items.isEmpty()) {
+			<br/> <h1>No recommendations found for this user</h1>
+		} else {
+			@for(item <- items) {
+				<ul>
+					<li>@item.getMovie().getId()</li>
+					<li><a href="@item.getMovie().getUrl()">@item.getMovie().getName()</a></li>
+					<li>@item.getItemValue()</li>
+				</ul>
+			}
+		} 
+	</div>
+
+	<footer> Copyright 2013 | MoviesXclusively4U | All Rights
+	Reserved </footer>
+
+</body>
+</html>
