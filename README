@@ -1,4 +1,12 @@
-This is your new Play 2.1 application
+Movie Recommendation System
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+Recommends movies for a user based on
+	- Non Clustered Item Based
+	- Non Clustered User Based
+	- Clustered User Based
+	- Clustered Item Based
+
+Developed using
+	- Apacha Mahout
+	- Play Framework 2.1
