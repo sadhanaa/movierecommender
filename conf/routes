@@ -6,6 +6,8 @@
 GET     /                           	controllers.Application.home()
 GET     /home	                     	controllers.Application.home()
 GET     /login  	                    controllers.Application.login()
+GET    /signup							controllers.Application.renderSignupPage()
+POST    /signup							controllers.Application.newUser()
 GET     /selection/:uid				    controllers.Application.selectionPage(uid)
 GET     /recommendations/:type		    controllers.Application.getRecommendations(type)
 

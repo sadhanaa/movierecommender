@@ -3,9 +3,14 @@
  */
 package movierecommender;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
@@ -62,14 +67,11 @@ public class RecommendationEngine {
 	
 	public List<RecommendedItem> getNonClusUserBased(long userId) throws TasteException, IOException {
 		DataModel model = new FileDataModel(Play.application().getFile("/app/movierecommender/u.csv"));
-		
-//		DataModel model = new FileDataModel(new File("G:\\sadhana\\workspace\\MiA-master\\src\\main\\java\\mia\\recommender\\ch02\\u.csv"));
 		return getUserBasedRecommendationsInternal(model, userId);
 	}
 	
 	public List<RecommendedItem> getNonClusItemBased(long userId) throws TasteException, IOException {
 		DataModel model = new FileDataModel(Play.application().getFile("/app/movierecommender/u.csv"));
-//		DataModel model = new FileDataModel(new File("G:\\sadhana\\workspace\\MiA-master\\src\\main\\java\\mia\\recommender\\ch02\\u.csv"));
 		return getItemBasedRecommendationsInternal(model, userId);	
 	}
 	
@@ -81,6 +83,35 @@ public class RecommendationEngine {
 	public List<RecommendedItem> getClusItemBased(long userId, String gender, int age) throws TasteException, IOException {
 		DataModel model = new FileDataModel(ClusteringDataFiles.getFile(gender, age));
 		return getItemBasedRecommendationsInternal(model, userId);
+	}
+	
+	public List<RecommendedItem> getRecommendationsForNewUser() throws IOException {
+		Reader in = new FileReader(Play.application().getFile("/app/movierecommender/u.csv"));
+		Iterable<CSVRecord> parser = CSVFormat.newBuilder().withDelimiter(',').parse(in);
+		List<RecommendedItem> retList = new ArrayList<RecommendedItem>();
+
+		int i = 0;
+		 for(final CSVRecord r : parser) {
+			 if(i == 10 ) {
+				 break;
+			 }
+			 
+			 retList.add(new RecommendedItem() {
+				
+				@Override
+				public float getValue() {
+					return Float.parseFloat(r.get(2));
+				}
+				
+				@Override
+				public long getItemID() {
+					return Long.parseLong(r.get(1));
+				}
+			});
+			 
+			 i++;
+		 }
+		 return retList;
 	}
 	
 	private List<RecommendedItem> getUserBasedRecommendationsInternal(DataModel model, long userId) throws TasteException {
