@@ -8,5 +8,5 @@ Recommends movies for a user based on
 	- Clustered Item Based
 
 Developed using
-	- Apacha Mahout
+	- Apache Mahout
 	- Play Framework 2.1
